@@ -2,13 +2,13 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, browserHistory } from 'react-router'
 import makeRoutes from './routes'
 
 const routes = makeRoutes()
 
 render((
-  <Router>
+  <Router history={browserHistory}>
     {routes}
   </Router>
 ), document.getElementById("hello-world"))
