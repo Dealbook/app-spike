@@ -2,25 +2,36 @@
 
 import React, { PropTypes as T, Component } from 'react'
 import { ButtonToolbar, Button } from 'react-bootstrap'
-// import AuthService from '../utils/AuthService'
+import Greeting from './Greeting'
+import LoginButton from './LoginButton'
 
 export class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.url = this.props.route.url
+    this.auth = this.props.route.auth
+    this.state = { data: "" }
+  }
+
+  loadGreeting() {
+    fetch(this.url)
+      .then(response => response.json())
+      .then(data => this.setState(data))
+      .catch(err => console.error(this.url, err.toString()))
+  }
+
+  componentDidMount() {
+    this.loadGreeting()
+  }
+
   render() {
-    // const { auth } = this.props
     return (
       <div className="root">
-        <ButtonToolbar className="toolbar">
-          <Button bsStyle="primary"
-                  // onClick={ auth.login.bind(this) }
-                  >Login</Button>
-        </ButtonToolbar>
+        <Greeting greeting={this.state.data} />
+        <LoginButton auth={this.auth} />
       </div>
     )
   }
 }
-// Login.propTypes = {
-//   location: T.object,
-//   auth: T.instanceOf(AuthService)
-// }
 
-export default Login;
+export default Login
