@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, IndexRedirect } from 'react-router'
 import AuthService from './utils/AuthService'
-// import Home from './Home/Home'
 import Login from './components/Login'
+import Home from './components/Home'
 
 const auth = new AuthService("76seOoz7jb5yPXEBwfEyMY0uvm4FV50I", "dealbook.auth0.com")
 const url = "https://whispering-shelf-84640.herokuapp.com/api"
@@ -17,7 +17,12 @@ const requireAuth = (nextState, replace) => {
 
 export const makeRoutes = () => {
   return (
-    <Route path="login" component={Login} auth={auth} url={url} />
+    <Route path='/'>
+      <IndexRedirect to="/home" />
+      <Route path="home" component={Home} />
+      <Route path="login" component={Login} auth={auth} url={url} />
+      <Route path="access_token=:token" component={Login} auth={auth} url={url} /> //to prevent router errors
+    </Route>
   )
 }
 
