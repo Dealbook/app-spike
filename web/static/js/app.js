@@ -2,13 +2,6 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, hashHistory } from 'react-router'
-import makeRoutes from './routes'
+import App from './containers/App'
 
-const routes = makeRoutes()
-
-render((
-  <Router history={hashHistory}>
-    {routes}
-  </Router>
-), document.getElementById("hello-world"))
+render(<App />, document.getElementById("hello-world"))

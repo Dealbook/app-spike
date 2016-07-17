@@ -1,37 +1,25 @@
 'use strict'
 
-// import React, { Component } from 'react'
-// import routes from '../routes'
-// import Greeting from '../components/Greeting'
-// import Login from '../components/Login'
-//
-// class App extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = { data: "" }
-//   }
-//
-//   loadGreeting() {
-//     fetch(this.props.url)
-//       .then(response => response.json())
-//       .then(data => this.setState(data))
-//       .catch(err => console.error(this.props.url, err.toString()))
-//   }
-//
-//   componentDidMount() {
-//     this.loadGreeting()
-//   }
-//
-//   render() {
-//     return (
-//       <div>
-//         <Router routes={routes} />
-//
-//         // <Greeting greeting={this.state.data} />
-//         // <Login />
-//       </div>
-//     )
-//   }
-// }
-//
-// export default App
+import React, { Component } from 'react'
+import { Router, hashHistory } from 'react-router'
+import makeRoutes from '../routes'
+
+const routes = makeRoutes()
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  /* TODO: switch to browserHistory.
+     How to make the Auth0 callback with the correct URL? */
+  render() {
+    return (
+      <Router history={hashHistory}>
+        {routes}
+      </Router>
+    )
+  }
+}
+
+export default App
