@@ -3,7 +3,12 @@
 import React from 'react'
 
 const Greeting = (props) => {
-  return (<h1>Greeting: "{props.greeting}"</h1>)
+  return (
+    <div>
+      <h2>Login</h2>
+      <p>{props.greeting}</p>
+    </div>
+  )
 }
 
 export default Greeting
