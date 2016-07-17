@@ -20,6 +20,9 @@ export class Home extends Component {
     this.context.router.push('/login')
   }
 
+  /*
+   * TODO: use Greeting component
+   */
   render() {
     const { profile } = this.state
     return (

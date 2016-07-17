@@ -8,6 +8,7 @@ import LoginButton from './LoginButton'
 export class Login extends Component {
   constructor(props) {
     super(props)
+    // TODO: pass props directly
     this.url = this.props.route.url
     this.auth = this.props.route.auth
     this.state = { data: "" }

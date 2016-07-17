@@ -11,8 +11,10 @@ class App extends Component {
     super(props)
   }
 
-  /* TODO: switch to browserHistory.
-     How to make the Auth0 callback with the correct URL? */
+  /*
+   * TODO: switch to browserHistory.
+   * How to make the Auth0 callback with the correct URL?
+   */
   render() {
     return (
       <Router history={hashHistory}>

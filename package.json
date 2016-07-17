@@ -13,7 +13,8 @@
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0",
-    "react-router": "^2.5.2"
+    "react-router": "^2.5.2",
+    "jsenv-brunch": "^2.0.0"
   },
   "devDependencies": {
     "babel-brunch": "~6.0.0",
