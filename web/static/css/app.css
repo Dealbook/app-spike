@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+
+.root{
+  text-align: center;
+}
+
+.toolbar{
+  display: inline-block;
+}
